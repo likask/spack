@@ -67,6 +67,8 @@ class MofemCephas(CMakePackage):
     # for versions 2.6: fully resolved
     depends_on('adol-c@2.5.2~examples', when='+adol-c')
     depends_on('tetgen', when='+tetgen')
+    depends_on('parmetis')
+    depends_on('blas')
 
     # MED install
     depends_on('med', when='+med')
@@ -89,7 +91,8 @@ class MofemCephas(CMakePackage):
             '-DPETSC_DIR=%s' % spec['petsc'].prefix,
             '-DPETSC_ARCH=',
             '-DMOAB_DIR=%s' % spec['moab'].prefix,
-            '-DBOOST_DIR=%s' % spec['boost'].prefix])
+            '-DBOOST_DIR=%s' % spec['boost'].prefix,
+            '-DBLAS_DIR=%s' % spec['blas'].prefix])
 
         # build tests
         options.append('-DMOFEM_BUILD_TESTS={0}'.format(
