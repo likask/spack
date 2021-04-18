@@ -17,6 +17,7 @@ class MofemFractureModule(CMakePackage):
 
     version('develop', branch='develop')
     version('lukasz', branch='lukasz/develop')
+    version('0.11.0', branch='Version0.11.0')
     version('0.10.0', branch='Version0.10.0')
     version('0.9.62', branch='Version0.9.62')
     version('0.9.61', tag='v0.9.61-release')
@@ -36,7 +37,8 @@ class MofemFractureModule(CMakePackage):
         description='Copy user modules directory instead linking')
 
     extends('mofem-cephas')
-    depends_on('mofem-mortar-contact@0.10.0', when='@0.10.0')
+    depends_on('mofem-mortar-contact@0.11.0', when='@0.11.0')
+    depends_on('mofem-users-modules@0.11.0', when='@0.11.0')
     depends_on('mofem-users-modules@0.10.0', when='@0.10.0')
     depends_on('mofem-users-modules@0.9.2', when='@0.9.62')
     depends_on('mofem-users-modules@0.9.1', when='@0.9.61')
@@ -52,6 +54,10 @@ class MofemFractureModule(CMakePackage):
     depends_on("mofem-users-modules", type=('build', 'link', 'run'))
     depends_on("mofem-mortar-contact", 
       type=('build', 'link', 'run'), when='@0.10.0')
+    depends_on("mofem-mortar-contact", 
+      type=('build', 'link', 'run'), when='@develop')
+    depends_on("mofem-mortar-contact", 
+      type=('build', 'link', 'run'), when='@lukasz')
 
     # The CMakeLists.txt installed with mofem-cephas package set cmake
     # environment to install extension from extension repository. It searches
