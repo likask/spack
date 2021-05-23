@@ -115,13 +115,13 @@ class MofemCephas(CMakePackage):
         # obligatory options
         options.extend([
             '-DCMAKE_EXPORT_COMPILE_COMMANDS=ON',
-            '-DMPI_RUN_FLAGS=--allow-run-as-root --oversubscribe',
-            '-DWITH_SPACK=YES',
-            '-DPETSC_DIR=%s' % spec['petsc'].prefix,
-            '-DPETSC_ARCH=',
-            '-DMOAB_DIR=%s' % spec['moab'].prefix,
-            '-DBOOST_DIR=%s' % spec['boost'].prefix,
-            '-DBLAS_DIR=%s' % spec['blas'].prefix])
+            '-DMPI_RUN_FLAGS:STRING=--allow-run-as-root',
+            '-DWITH_SPACK:BOOL=YES',
+            '-DPETSC_DIR:PATH=%s' % spec['petsc'].prefix,
+            '-DPETSC_ARCH:STRING=',
+            '-DMOAB_DIR:PATH=%s' % spec['moab'].prefix,
+            '-DBOOST_DIR:PATH=%s' % spec['boost'].prefix,
+            '-DBLAS_DIR:PATH=%s' % spec['blas'].prefix])
 
         # build tests
         options.append('-DMOFEM_BUILD_TESTS={0}'.format(
@@ -129,20 +129,20 @@ class MofemCephas(CMakePackage):
 
         # variant packages
         if '+adol-c' in spec:
-            options.append('-DADOL-C_DIR=%s' % spec['adol-c'].prefix)
+            options.append('-DADOL-C_DIR:PATH=%s' % spec['adol-c'].prefix)
 
         if '+tetgen' in spec:
-            options.append('-DTETGEN_DIR=%s' % spec['tetgen'].prefix)
+            options.append('-DTETGEN_DIR:PATH=%s' % spec['tetgen'].prefix)
 
         if '+med' in spec:
-            options.append('-DMED_DIR=%s' % spec['med'].prefix)
+            options.append('-DMED_DIR:PATH=%s' % spec['med'].prefix)
 
         if '+slepc' in spec:
-            options.append('-DSLEPC_DIR=%s' % spec['slepc'].prefix)
+            options.append('-DSLEPC_DIR:PATH=%s' % spec['slepc'].prefix)
 
         # copy users modules, i.e. stand alone vs linked users modules
         options.append(
-            '-DSTAND_ALLONE_USERS_MODULES=%s' %
+            '-DSTAND_ALLONE_USERS_MODULES:BOOL=%s' %
             ('YES' if '+copy_user_modules' in spec else 'NO'))
         return options
 
