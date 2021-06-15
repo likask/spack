@@ -63,8 +63,8 @@ class MofemCephas(CMakePackage):
     depends_on('mpi')
 
     # PETSC install
-    depends_on('petsc@:3.14.99+mumps+mpi')
-    depends_on('slepc@:3.14.99', when='+slepc')
+    depends_on('petsc@:3.11.99+mumps+mpi')
+    depends_on('slepc@:3.11.99', when='+slepc')
     depends_on('petsc@:3.11.99+mumps+mpi', when='@0.8.7:0.10.0')
     depends_on('slepc@:3.11.99', when='@0.8.7:0.10.0 +slepc')
     depends_on('petsc@:3.11.99+mumps+mpi', when='@develop')
