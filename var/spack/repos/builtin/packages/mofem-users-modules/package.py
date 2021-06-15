@@ -50,7 +50,7 @@ class MofemUsersModules(CMakePackage):
     variant('docker', default=False, description='Build in docker volume')
 
     extends('mofem-cephas')
-		depends_on('mofem-cephas@0.12.0', when='@0.12.1')
+    depends_on('mofem-cephas@0.12.0', when='@0.12.1')
     depends_on('mofem-cephas@0.12.0', when='@0.12.0')
     depends_on('mofem-cephas@0.11.1', when='@0.11.1')
     depends_on('mofem-cephas@0.11.0', when='@0.11.0')
