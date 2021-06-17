@@ -41,7 +41,7 @@ class MofemFractureModule(CMakePackage):
         description='Copy user modules directory instead linking')
 
     extends('mofem-cephas')
-    depends_on('mofem-mortar-contact@0.12.0', when='@0.12.3')
+    depends_on('mofem-mortar-contact@0.12.1', when='@0.12.3')
     depends_on('mofem-mortar-contact@0.12.0', when='@0.12.2')
     depends_on('mofem-mortar-contact@0.12.0', when='@0.12.1')
     depends_on('mofem-mortar-contact@0.12.0', when='@0.12.0')

@@ -15,6 +15,7 @@ class MofemMortarContact(CMakePackage):
 
     version('develop', branch='develop')
     version('lukasz', branch='lukasz/develop')
+    version('0.12.1', branch='Version0.12.1')
     version('0.12.0', branch='Version0.12.0')
     version('0.11.0', branch='Version0.11.0')
     version('0.10.0', branch='Version0.10.0')
@@ -26,6 +27,7 @@ class MofemMortarContact(CMakePackage):
 
     extends('mofem-cephas')
     depends_on("mofem-users-modules", type=('build', 'link', 'run'))
+    depends_on('mofem-users-modules@0.12.2:', when='@0.12.1:')
 
     def setup_build_environment(self, env):
         env.set('CTEST_OUTPUT_ON_FAILURE', '1')
