@@ -18,6 +18,7 @@ class MofemUsersModules(CMakePackage):
 
     version('develop', branch='develop')
     version('lukasz', branch='lukasz/develop')
+    version('0.12.2', branch='Version0.12.2')
     version('0.12.1', branch='Version0.12.1')
     version('0.12.0', branch='Version0.12.0')
     version('0.11.1', branch='Version0.11.1')
@@ -49,6 +50,7 @@ class MofemUsersModules(CMakePackage):
         description='Copy user modules directory instead linking')
 
     extends('mofem-cephas')
+    depends_on('mofem-cephas@0.12.1', when='@0.12.2')
     depends_on('mofem-cephas@0.12.0', when='@0.12.1')
     depends_on('mofem-cephas@0.12.0', when='@0.12.0')
     depends_on('mofem-cephas@0.11.1', when='@0.11.1')
