@@ -29,10 +29,10 @@ class MofemMortarContact(CMakePackage):
 
     extends('mofem-cephas')
     depends_on("mofem-users-modules", type=('build', 'link', 'run'))
-    depends_on('mofem-users-modules@0.12.2:', when='@0.12.1:')
+    depends_on('mofem-users-modules@0.12.2:', when='@0.12.1')
     depends_on('mofem-users-modules@lukasz', when='@lukasz')
     depends_on('mofem-users-modules@develop', when='@develop')
-
+ 
     # The CMakeLists.txt installed with mofem - cephas package set cmake
     # environment to install extension from extension repository.It searches
     # for modules in user provides paths, for example in Spack source path.Also
