@@ -28,6 +28,8 @@ class MofemMortarContact(CMakePackage):
     extends('mofem-cephas')
     depends_on("mofem-users-modules", type=('build', 'link', 'run'))
     depends_on('mofem-users-modules@0.12.2:', when='@0.12.1:')
+    depends_on('mofem-users-modules@lukasz', when='@lukasz')
+    depends_on('mofem-users-modules@develop', when='@develop')
 
     def setup_build_environment(self, env):
         env.set('CTEST_OUTPUT_ON_FAILURE', '1')
