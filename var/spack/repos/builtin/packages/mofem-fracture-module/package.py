@@ -46,6 +46,8 @@ class MofemFractureModule(CMakePackage):
     depends_on('mofem-mortar-contact@0.12.0', when='@0.12.1')
     depends_on('mofem-mortar-contact@0.12.0', when='@0.12.0')
     depends_on('mofem-mortar-contact@0.11.0', when='@0.11.0')
+    depends_on('mofem-mortar-contact@lukasz', when='@lukasz')
+    depends_on('mofem-mortar-contact@develop', when='@develop')    
     depends_on('mofem-users-modules@0.12.2', when='@0.12.3')
     depends_on('mofem-users-modules@0.12.1', when='@0.12.2')
     depends_on('mofem-users-modules@0.12.0', when='@0.12.1')
