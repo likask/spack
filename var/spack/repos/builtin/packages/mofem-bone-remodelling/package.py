@@ -13,7 +13,7 @@ class MofemBoneRemodelling(CMakePackage):
     homepage = "http://mofem.eng.gla.ac.uk"
     git = "https://bitbucket.org/likask/mofem_um_bone_remodelling.git"
 
-    maintainers = ['likask']
+    maintainers = ['karol41', 'likask']
 
     version('develop', branch='develop')
     version('0.1.0', tag='v0.1.0')

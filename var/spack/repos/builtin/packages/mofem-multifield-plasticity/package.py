@@ -13,10 +13,10 @@ class MofemMultifieldPlasticity(CMakePackage):
     homepage = "http://mofem.eng.gla.ac.uk"
     git = "https://karol41@bitbucket.org/karol41/um_multifield_plasticity.git"
 
-    maintainers = ['karol41']
+    maintainers = ['karol41', 'likask']
 
     version('develop', branch='develop')
-    version('0.1.1', tag='v0.1.1')
+    version('0.12.0', branch='v0.12.0')
     version('0.1.0', tag='v0.1.0')
 
     variant('copy_user_modules', default=True,
