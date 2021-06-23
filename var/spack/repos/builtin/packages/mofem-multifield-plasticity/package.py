@@ -16,7 +16,7 @@ class MofemMultifieldPlasticity(CMakePackage):
     maintainers = ['karol41', 'likask']
 
     version('develop', branch='develop')
-    version('0.12.0', branch='v0.12.0')
+    version('0.12.0', branch='Version0.12.0')
     version('0.1.0', tag='v0.1.0')
 
     variant('copy_user_modules', default=True,
