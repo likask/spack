@@ -52,6 +52,7 @@ class MofemBoneRemodelling(CMakePackage):
         options.extend([
             '-DWITH_SPACK=YES',
             '-DWITH_METAIO=1',
+            '-DMPI_RUN_FLAGS=--allow-run-as-root',
             '-DEXTERNAL_MODULES_BUILD=YES',
             '-DUM_INSTALL_PREFIX=%s' % spec['mofem-users-modules'].prefix,
             '-DUM_INSTALL_BREFIX=%s' % spec['mofem-users-modules'].prefix,
